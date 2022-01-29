@@ -1,7 +1,7 @@
 <template>
   <div>
-  <span class="car-name">{{this.car.CarName}}</span>
-  <span class="wings-out" v-if="this.car.WingsOpen"><i class="fas fa-paper-plane icon"></i></span>
+  <span class="car-name">{{carName}}</span>
+  <span class="wings-out" v-if="isFlying"><i class="fas fa-paper-plane icon"></i></span>
   </div>
 </template>
 
@@ -11,6 +11,15 @@ export default {
   name: "PlayerCar",
   props: ["car"],
   computed: {
+    carName() {
+      if (!this.car?.CarName) return "loading";
+      return this.car?.CarName;
+    },
+    isFlying() {
+      if (this.car?.WingsOpen) return true;
+      return false
+    }
+
 
   },
 

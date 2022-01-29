@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <PlayerList v-bind:players="players"/>
-    <TrackInfo/>
+    <TrackInfo v-bind:track="level"/>
   </div>
 </template>
 
@@ -12,17 +12,17 @@ import {getSummary} from "@/services/DistanceService";
 
 export default {
   name: 'App',
-  components: { PlayerList, TrackInfo},
+  components: { PlayerList, TrackInfo },
   data(){
     return {
       players: [],
-      server:[],
-      level:[],
-      chat:[]
+      server: [],
+      level: [],
+      chat: []
     }
   },
   created(){
-    // getSummary().then(response => {console.log(response.data.Players)})
+    // getSummary().then(response => {console.log(response.data.Level)})
     // setInterval(() => {
     //   getSummary().then(response => {console.log(response.data.Players)});
     // }, 250);
@@ -38,7 +38,7 @@ export default {
         this.server = response.data.Server;
         this.level = response.data.Level;
         this.chat = response.data.ChatLog;});
-    }, 250);
+    }, 500);
   }
 }
 </script>
