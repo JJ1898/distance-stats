@@ -1,5 +1,6 @@
 {
   "name": "distance-stats",
+  "description": "Vue app designed to display Distance dedicated server (https://github.com/Corecii/Distance-Server) info in OBS",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +9,12 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.25.0",
+    "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
+    "dotenv": "^14.3.2",
+    "sass": "^1.49.0",
+    "sass-loader": "^10",
     "vue": "^2.6.11"
   },
   "devDependencies": {
