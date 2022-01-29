@@ -4,6 +4,8 @@ import {BootstrapVue, IconsPlugin} from "bootstrap-vue";
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import './assets/app.scss'
+import '@fortawesome/fontawesome-free/css/all.css'
+
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)

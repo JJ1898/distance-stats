@@ -3,3 +3,19 @@ $body-color: #000;
 
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 @import 'node_modules/bootstrap-vue/src/index.scss';
+
+@font-face {
+  font-family: 'SLMN-Industry';
+  src: url('/assets/fonts/INDUSTRY-MEDIUM.woff2') format("woff"), url('/assets/fonts/INDUSTRY-MEDIUM.ttf') format("ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'SLMN-Industry';
+  src: url('/assets/fonts/INDUSTRY-DEMI.woff2') format("woff"), url('/assets/fonts/INDUSTRY-DEMI.ttf') format("ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'SLMN-Industry';
+  src: url('/assets/fonts/INDUSTRY-BOLD.woff2') format("woff"), url('/assets/fonts/INDUSTRY-BOLD.ttf') format("ttf");
+  font-weight: 700;
+}
