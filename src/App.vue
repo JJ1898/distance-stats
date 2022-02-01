@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <PlayerList v-bind:players="players"/>
-    <TrackInfo v-bind:track="level"/>
+    <div>
+      <div class="player-list-wrapper"><PlayerList v-bind:players="players"/></div>
+      <div class="track-data-wrapper"><TrackInfo v-bind:track="level"/></div>
+    </div>
   </div>
 </template>
 
@@ -49,7 +51,21 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  height: 100%;
-  width: 100%;
+  min-height: 1055px;
+  max-height: 1055px;
+}
+.player-list-wrapper {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  height: 980px;
+  width: 600px;
+}
+.track-data-wrapper {
+  background-color: rgba(0,0,0,.75);
+  position: absolute;
+  height: 50px;
+  bottom: 15px;
+  right: 50px;
 }
 </style>

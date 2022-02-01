@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="track-info">
     {{getTrack}} ({{getMode}})
   </div>
 
@@ -23,5 +23,15 @@ export default {
 </script>
 
 <style scoped>
+.track-info {
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-size: 25px;
+  padding: 15px;
+}
 
 </style>
