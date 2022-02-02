@@ -67,6 +67,7 @@ export default {
     color: white;
     border-left: white;
     border-right: white;
+    border-width: 5px;
   }
 
 </style>
