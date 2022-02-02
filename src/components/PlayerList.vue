@@ -10,16 +10,16 @@
 import Player from "./Player";
 
 export default {
-  components: {Player},
-  name: "PlayerList",
-  props: ["players"],
-  computed: {
-    emptyServer() {
-      if (this.players) return false;
-      return true;
+    components: { Player },
+    name: "PlayerList",
+    props: ["players"],
+    computed: {
+        emptyServer() {
+            if (this.players) return false;
+            return true;
+        }
     }
-  }
-}
+};
 </script>
 
 <style scoped>
