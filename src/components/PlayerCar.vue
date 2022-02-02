@@ -3,15 +3,15 @@
     <div class="player-status row justify-content-center align-content-center">
       <span class="car-name col-sm">{{carName}}</span>
       <span>
-      <span class="speed col-sm" v-if="currentSpeed">{{currentSpeed}}</span>
-      <span class="flying col-sm" ><i v-if="isFlying" class="fas fa-paper-plane icon"></i></span>
-      <span class="wrecked col-sm" ><i v-if="isWrecked" class="fas fa-skull-crossbones icon"></i></span>
-      <span class="dnf col-sm">
-        <span v-if="isDNF">
-          <i class="fas fa-skull-crossbones icon"></i>DNF
+        <span class="speed col-sm" v-if="currentSpeed">{{currentSpeed}}</span>
+        <span class="flying col-sm" ><i v-if="isFlying" class="fas fa-paper-plane icon"></i></span>
+        <span class="wrecked col-sm" ><i v-if="isWrecked" class="fas fa-skull-crossbones icon"></i></span>
+        <span class="dnf col-sm">
+          <span v-if="isDNF">
+            <i class="fas fa-skull-crossbones icon"></i>DNF
+         </span>
         </span>
       </span>
-        </span>
       <span class="finished col-sm" ><i v-if="isFinished" class="fas fa-flag-checkered icon"></i></span>
     </div>
   </div>

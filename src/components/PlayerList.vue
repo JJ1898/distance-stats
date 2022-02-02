@@ -1,16 +1,16 @@
 <template>
     <div class="player-list" v-if="!emptyServer">
-      <Player v-for="player in players" :key="player.id" :player="player"/>
+      <PlayerData v-for="player in players" :key="player.id" :player="player"/>
     </div>
 
 </template>
 
 <script>
 
-import Player from "./Player";
+import PlayerData from "./PlayerData";
 
 export default {
-    components: { Player },
+    components: { PlayerData },
     name: "PlayerList",
     props: ["players"],
     computed: {
