@@ -1,12 +1,12 @@
 <template>
-    <div class="player-list" v-if="!emptyServer">
-      <PlayerData v-for="player in players" :key="player.id" :player="player"/>
+    <div class="player-list flex-column" v-if="!emptyServer">
+      <PlayerData v-for="player in sortedPlayers" :key="player.id" :player="player"/>
     </div>
 
 </template>
 
 <script>
-
+import _ from "lodash";
 import PlayerData from "./PlayerData";
 
 export default {
@@ -17,6 +17,10 @@ export default {
         emptyServer() {
             if (this.players) return false;
             return true;
+        },
+        // TODO: actually sort players by finish time
+        sortedPlayers() {
+            return this.players;
         }
     }
 };

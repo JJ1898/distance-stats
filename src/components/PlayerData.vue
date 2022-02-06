@@ -1,8 +1,11 @@
 <template>
+
     <div class="player-box" v-if="!isSpectator">
       <span class="player-name">{{playerName}}</span>
-      <span><PlayerCar v-bind:car="playerCar"/></span>
-      <span v-if="finishTime">{{finishTime}}</span>
+        <span>
+          <div class="finish-time" v-if="finishTime"><i class="fas fa-flag-checkered icon"></i> {{finishTime}}</div>
+          <PlayerCar v-bind:car="playerCar" v-else/>
+        </span>
     </div>
 
 </template>
@@ -29,7 +32,7 @@ export default {
             if (this.player.Car?.FinishType === "Spectate") return null;
             if (this.player.Car?.FinishData === -1) return null;
             if (!this.player.Car) return null;
-            if (this.player.Car?.FinishType === "DNF") return false;
+            if (this.player.Car?.FinishType === "DNF") return null;
             return msToHuman((this.player.Car?.FinishData));
         },
         carPrimaryColor() {
@@ -56,14 +59,22 @@ export default {
 
 <style scoped>
   .player-box {
-    background-color: rgba(0,0,0,.25);
+    background-color: rgba(0,0,0,.5);
     white-space: nowrap;
     margin: 5px;
+    min-height: 60px;
   }
   .player-name {
     font-weight: 700;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
+
+  }
+  .finish-time {
+    font-weight: 400;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
   }
 
 

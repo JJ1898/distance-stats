@@ -60,10 +60,10 @@ export default {
   top: 50px;
   left: 50px;
   height: 980px;
-  width: 600px;
+  width: 450px;
 }
 .track-data-wrapper {
-  background-color: rgba(0,0,0,.75);
+  background-color: rgba(0,0,0,.5);
   position: absolute;
   height: 50px;
   bottom: 15px;
