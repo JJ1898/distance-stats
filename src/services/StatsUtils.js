@@ -1,7 +1,7 @@
 export function totalVelocity(...velocity) {
     const totalVelocity = Math.round(
         (
-            Math.abs(velocity[0][0]) + Math.abs(velocity[0][1]) + Math.abs(velocity[0][2])
+            Math.sqrt((velocity[0][0] ** 2) + (velocity[0][1] ** 2) + (velocity[0][2] ** 2))
         )
     );
     return totalVelocity;
