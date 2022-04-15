@@ -9,7 +9,7 @@ const apiClient = axios.create({
     }
 });
 
-export function getSummary() {
-    const data = apiClient.get("/summary");
-    return data;
+export async function getSummary() {
+    const response = await apiClient.get("/summary");
+    return response.data;
 }

@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import _ from "lodash";
 import PlayerData from "./PlayerData";
 
 export default {
@@ -15,12 +14,18 @@ export default {
     props: ["players"],
     computed: {
         emptyServer() {
-            if (this.players) return false;
-            return true;
+            return !this.players;
         },
-        // TODO: actually sort players by finish time
+        finishedPlayers() {
+            // TODO: What is the key for finish time
+            // TODO: Not sure if a and be should be the other way around
+            return this.players.filter(player => player?.Car?.Finished).sort((a, b) => b?.Car?.FinishTime - a?.Car?.FinishTime);
+        },
+        unfinishedPlayers() {
+            return this.players.filter(player => !player?.Car?.Finished);
+        },
         sortedPlayers() {
-            return this.players;
+            return [...this.finishedPlayers, ...this.unfinishedPlayers];
         }
     }
 };

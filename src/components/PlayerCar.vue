@@ -18,7 +18,7 @@
 
 <script>
 
-import { totalVelocity } from "../services/StatsUtils";
+import { totalVelocity } from "@/services/StatsUtils";
 
 export default {
     name: "PlayerCar",
@@ -29,21 +29,17 @@ export default {
             return this.car?.CarName;
         },
         isFlying() {
-            if (this.car?.WingsOpen) return true;
-            return false;
+            return !!this.car?.WingsOpen;
         },
         isWrecked() {
-            if (!this.car?.Alive) return true;
-            return false;
+            return !this.car?.Alive;
         },
         isDNF() {
-            if (this.car?.FinishType === "DNF") return true;
-            return false;
+            return this.car?.FinishType === "DNF";
         },
         isFinished() {
             if (this.car?.FinishType === "DNF") return false;
-            if (this.car?.Finished) return true;
-            return false;
+            return !!this.car?.Finished;
         },
         currentSpeed() {
             if (!this.car?.Velocity) return 0;
