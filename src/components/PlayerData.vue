@@ -12,15 +12,14 @@
 
 <script>
 import PlayerCar from "@/components/PlayerCar";
-import { msToHuman, colorArrayToRGB } from "../services/StatsUtils";
+import { msToHuman, colorArrayToRGB } from "@/services/StatsUtils";
 export default {
     components: { PlayerCar },
     name: "PlayerData",
     props: ["player"],
     computed: {
         isSpectator() {
-            if (this.player.Car?.FinishType === "Spectate") return true;
-            return false;
+            return this.player.Car?.FinishType === "Spectate";
         },
         playerName() {
             return this.player?.Name;

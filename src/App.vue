@@ -23,24 +23,19 @@ export default {
             chat: []
         };
     },
-    created() {
-    // getSummary().then(response => {console.log(response.data.Level)})
-    // setInterval(() => {
-    //   getSummary().then(response => {console.log(response.data.Players)});
-    // }, 250);
-        getSummary().then(response => {
-            this.players = response.data.Players;
-            this.server = response.data.Server;
-            this.level = response.data.Level;
-            this.chat = response.data.ChatLog;
-        });
-        setInterval(() => {
-            getSummary().then(response => {
-                this.players = response.data.Players;
-                this.server = response.data.Server;
-                this.level = response.data.Level;
-                this.chat = response.data.ChatLog;
-            });
+    methods: {
+        async updateData() {
+            const summary = await getSummary();
+            this.players = summary.Players;
+            this.server = summary.Server;
+            this.level = summary.Level;
+            this.chat = summary.ChatLog;
+        }
+    },
+    async mounted() {
+        await this.updateData();
+        setInterval(async () => {
+            await this.updateData();
         }, 500);
     }
 };
